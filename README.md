@@ -10,10 +10,7 @@ colour-coded badge in your shell prompt, so you can tell at a glance which
 account your commands are about to hit — and notice immediately when you're in
 `admin`.
 
-```
- my-account (ADMIN)      ← red
- my-account (DEV)        ← green
-```
+![Approov role badges: my-account (ADMIN) in red, (AUTOMATION) in orange, (DEV) in green, and any other role in blue.](docs/preview.svg)
 
 ## How it works
 
