@@ -1,0 +1,40 @@
+# Approov role badge for starship.
+#
+# Reads $APPROOV_ROLE (set by the Approov CLI as "role:account") and renders an
+# "account (ROLE)" badge coloured by role. starship can't recolour a single
+# module by value, so there is one module per role and only the matching one
+# renders (gated by `when`).
+#
+# Merge these blocks into your ~/.config/starship.toml. The default starship
+# format includes `$custom`, so the badge appears automatically. To control its
+# position, reference the modules explicitly in `format`, e.g.
+#   format = "${custom.approov_admin}${custom.approov_automation}${custom.approov_dev}${custom.approov_other}$all"
+
+[custom.approov_admin]
+when = '[ "${APPROOV_ROLE%%:*}" = "admin" ]'
+command = 'printf "%s (%s)" "${APPROOV_ROLE#*:}" "$(printf "%s" "${APPROOV_ROLE%%:*}" | tr "[:lower:]" "[:upper:]")"'
+shell = ["sh", "-c"]
+style = "bg:#FF5555 fg:#F5E0DC"
+format = "[ $output ]($style)"
+
+[custom.approov_automation]
+when = '[ "${APPROOV_ROLE%%:*}" = "automation" ]'
+command = 'printf "%s (%s)" "${APPROOV_ROLE#*:}" "$(printf "%s" "${APPROOV_ROLE%%:*}" | tr "[:lower:]" "[:upper:]")"'
+shell = ["sh", "-c"]
+style = "bg:#FFA500 fg:#F5E0DC"
+format = "[ $output ]($style)"
+
+[custom.approov_dev]
+when = '[ "${APPROOV_ROLE%%:*}" = "dev" ]'
+command = 'printf "%s (%s)" "${APPROOV_ROLE#*:}" "$(printf "%s" "${APPROOV_ROLE%%:*}" | tr "[:lower:]" "[:upper:]")"'
+shell = ["sh", "-c"]
+style = "bg:#2ECC71 fg:#F5E0DC"
+format = "[ $output ]($style)"
+
+# Any role that isn't admin/automation/dev (and not unset).
+[custom.approov_other]
+when = 'case "${APPROOV_ROLE%%:*}" in admin|automation|dev|"") exit 1 ;; *) exit 0 ;; esac'
+command = 'printf "%s (%s)" "${APPROOV_ROLE#*:}" "$(printf "%s" "${APPROOV_ROLE%%:*}" | tr "[:lower:]" "[:upper:]")"'
+shell = ["sh", "-c"]
+style = "bg:#5E81AC fg:#F5E0DC"
+format = "[ $output ]($style)"
