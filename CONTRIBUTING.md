@@ -16,7 +16,7 @@ To verify, set `APPROOV_ROLE` to each form and check the badge:
 eval "$(approov role admin my-account)"        # red    badge:  my-account (ADMIN)
 eval "$(approov role automation my-account)"   # orange badge:  my-account (AUTOMATION)
 eval "$(approov role dev my-account)"          # green  badge:  my-account (DEV)
-APPROOV_ROLE=other:my-account                # blue   badge:  my-account (OTHER)
+APPROOV_ROLE=other:my-account                  # blue   badge:  my-account (OTHER)
 unset APPROOV_ROLE                             # no badge at all
 ```
 
