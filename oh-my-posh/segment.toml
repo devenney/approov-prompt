@@ -1,0 +1,18 @@
+# Approov role badge. Reads APPROOV_ROLE (set by the Approov CLI as
+# "role:account") and renders an "account (ROLE)" badge coloured by role.
+
+[[blocks]]
+alignment = "left"
+type = "prompt"
+
+  [[blocks.segments]]
+  type = "text"
+  style = "plain"
+  foreground = "#F5E0DC"
+  background_templates = [
+    '{{ if hasPrefix "admin:" .Env.APPROOV_ROLE }}#FF5555{{ end }}',
+    '{{ if hasPrefix "automation:" .Env.APPROOV_ROLE }}#FFA500{{ end }}',
+    '{{ if hasPrefix "dev:" .Env.APPROOV_ROLE }}#2ECC71{{ end }}',
+    '#5E81AC',
+  ]
+  template = '{{ if .Env.APPROOV_ROLE }}{{ $parts := splitList ":" .Env.APPROOV_ROLE }} {{ index $parts 1 }} ({{ index $parts 0 | upper }}) {{ end }}'
