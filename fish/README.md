@@ -39,7 +39,7 @@ your theme. (Requires fish 3.x for `string upper`.)
 ## Verify
 
 ```fish
-eval (approov role admin my-account)   # red  my-account (ADMIN)  badge
+set -x APPROOV_ROLE admin:my-account   # red  my-account (ADMIN)  badge
 ```
 
 With `APPROOV_ROLE` unset the function returns immediately and prints nothing.

@@ -14,21 +14,14 @@
 > [!NOTE]
 > This is a personal project. It is **not** an official Approov product and is
 > not affiliated with, endorsed by, or supported by Approov. It only reads the
-> `APPROOV_ROLE` environment variable the Approov CLI already sets — it never
-> talks to Approov. Use at your own discretion.
+> `APPROOV_ROLE` environment variable — it never talks to Approov. Use at your
+> own discretion.
 
 ## How it works
 
-The Approov CLI selects a role against an account:
-
-```sh
-eval "$(approov role <role> <account>)"      # Unix shells
-set APPROOV_ROLE=<role>:<account>            # Windows (cmd)
-$env:APPROOV_ROLE = '<role>:<account>'       # Windows (PowerShell)
-```
-
-This exports `APPROOV_ROLE` in the form `role:account`. Each snippet here reads
-that variable and renders an `account (ROLE)` badge, coloured by role:
+Everything here reads one environment variable, `APPROOV_ROLE`, in the form
+`role:account`. Each snippet renders an `account (ROLE)` badge, coloured by
+role:
 
 | Role            | Colour |
 | --------------- | ------ |

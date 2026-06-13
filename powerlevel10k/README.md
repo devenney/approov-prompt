@@ -41,8 +41,8 @@ foreground `231`) in the `case` and the `p10k segment` call.
 ## Verify
 
 ```sh
-eval "$(approov role admin my-account)"   # red  my-account (ADMIN)  badge
-eval "$(approov role dev   my-account)"    # green badge
+export APPROOV_ROLE=admin:my-account   # red   my-account (ADMIN)  badge
+export APPROOV_ROLE=dev:my-account     # green my-account (DEV)    badge
 ```
 
 With `APPROOV_ROLE` unset the segment returns early and nothing is shown.

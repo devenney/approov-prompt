@@ -39,7 +39,7 @@ codes. Uppercasing uses `tr`, so it works on old bash (3.2) as well as bash 4+.
 ## Verify
 
 ```bash
-eval "$(approov role admin my-account)"   # red  my-account (ADMIN)  badge
+export APPROOV_ROLE=admin:my-account   # red  my-account (ADMIN)  badge
 ```
 
 With `APPROOV_ROLE` unset the function prints nothing and `PS1` is unchanged.

@@ -36,7 +36,7 @@ every `when` test fails and no badge renders.
 ## Notes
 
 - The modules run their `command`/`when` in `sh`, so `APPROOV_ROLE` must be
-  exported (the Approov CLI's `eval` does this). starship passes the parent
-  environment through to module shells.
+  exported in the environment. starship passes the parent environment through to
+  module shells.
 - Colours assume a dark background; adjust the `bg:`/`fg:` hex values in each
   `style` to taste.

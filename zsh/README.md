@@ -36,7 +36,7 @@ Colours use 24-bit (truecolor) escapes and assume a dark background. On a
 ## Verify
 
 ```zsh
-eval "$(approov role admin my-account)"   # red  my-account (ADMIN)  badge
+export APPROOV_ROLE=admin:my-account   # red  my-account (ADMIN)  badge
 ```
 
 With `APPROOV_ROLE` unset the function returns early and the prompt is unchanged.

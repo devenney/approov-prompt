@@ -1,13 +1,10 @@
 # PowerShell
 
-An Approov role badge for PowerShell (Windows, where the Approov CLI is often
-driven from `cmd`/PowerShell rather than a Unix shell), driven by
-`$env:APPROOV_ROLE`.
+An Approov role badge for PowerShell, driven by `$env:APPROOV_ROLE`.
 
-## Setting the role on Windows
+## Setting the role
 
-The Approov CLI prints a `set APPROOV_ROLE=...` command on Windows. In
-PowerShell, set it directly:
+Set `$env:APPROOV_ROLE` to `role:account`:
 
 ```powershell
 $env:APPROOV_ROLE = 'admin:my-account'
