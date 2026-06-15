@@ -30,6 +30,9 @@ role:
 | `dev`           | green  |
 | _anything else_ | blue   |
 
+A full list of Approov roles is available in the
+[Approov Usage Documentation](https://ext.approov.io/docs/latest/approov-usage-documentation/#user-roles).
+
 When `APPROOV_ROLE` is unset, the badge renders nothing.
 
 ## Pick your prompt
